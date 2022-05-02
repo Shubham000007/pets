@@ -621,6 +621,7 @@ p {
   position: fixed;
   z-index: 99;
   background: white;
+  top: 0;
 }
 
 
