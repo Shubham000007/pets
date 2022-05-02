@@ -1,7 +1,7 @@
 /* importing fonts  */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap");
 :root {
   --primary-color: #4da0a4;
   --secondary-color: #eee;
@@ -9,7 +9,7 @@
   --button-color: #4da0a4;
   --para-family: "Roboto", sans-serif;
   --font-size: 16px;
-  --heading-family: "Poppins", sans-serif;
+  --heading-family: "Comfortaa", cursive;
   --grey-color: #666;
   --white-color: #fff;
   --black-color: #000;
@@ -100,13 +100,13 @@ p {
 .theme__button {
   width: max-content;
   height: max-content;
-  padding: 1rem;
   background: var(--button-color);
   color: var(--white-color);
   text-align: center;
   outline: none;
   border: none;
-  border-radius: 5px;
+  padding: 1.5rem 4rem;
+  outline: 1px solid #fff;
 }
 
 .theme__button:hover {
@@ -160,6 +160,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .call__container a {
@@ -224,7 +225,7 @@ p {
   left: 0;
 }
 
-.banner>* {
+.banner > * {
   z-index: 100;
 }
 
@@ -246,9 +247,11 @@ p {
 
 .banner__heading h3 {
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--white-color);
   font-size: 2rem;
-  text-shadow: #000;
+  text-shadow: rgb(17, 17, 17) 0px 0px 25.6px;
+  font-weight: bold;
+  font-family: Comfortaa;
 }
 
 .banner__content p {
@@ -300,9 +303,8 @@ p {
   overflow: hidden;
 }
 
-.service__container {
+.service__main__container {
   width: 100%;
-  padding: 1rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -548,6 +550,10 @@ p {
   padding: 1rem 0;
   text-align: center;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .affordable__content h4 {
@@ -595,7 +601,7 @@ p {
   opacity: 0.7;
 }
 
-.price__section>* {
+.price__section > * {
   z-index: 100;
 }
 
@@ -624,8 +630,6 @@ p {
   top: 0;
 }
 
-
-
 /* About Page css  */
 
 .about__section {
@@ -653,6 +657,21 @@ p {
 .about__gallery__card img {
   width: 100%;
 }
+.about__image__gallery {
+  overflow: hidden;
+  width: 100%;
+}
+.about__image__gallery .slick-slide > img {
+  padding: 0;
+  opacity: 1;
+  border-radius: 10px;
+}
+
+.about__gallery__card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
 
 /* Price List Section  css  */
 .price__section__about {
@@ -678,7 +697,7 @@ p {
   opacity: 0.7;
 }
 
-.price__section__about>* {
+.price__section__about > * {
   z-index: 100;
 }
 
@@ -720,8 +739,6 @@ p {
 
 /* About Page css Ends */
 
-
-
 /* Booking Page css  */
 
 .booking__banner__section {
@@ -748,7 +765,7 @@ p {
   left: 0;
 }
 
-.booking__banner__section>* {
+.booking__banner__section > * {
   z-index: 100;
 }
 
@@ -771,7 +788,6 @@ p {
   margin: 1rem 0;
 }
 
-
 .booking__intro__section p:nth-child(2) {
   font-weight: bold;
 }
@@ -781,7 +797,6 @@ p {
   margin: 1rem 0;
   overflow: hidden;
 }
-
 
 .booking__form {
   width: 100%;
@@ -796,6 +811,7 @@ p {
   margin-top: 1rem;
   overflow: hidden;
   box-sizing: border-box;
+  padding: 1rem;
 }
 
 .booking__form::after {
@@ -809,8 +825,12 @@ p {
   left: 0;
 }
 
-.booking__form>* {
+.booking__form > * {
   z-index: 100;
+}
+
+.booking__form .theme__button {
+  width: 100%;
 }
 
 .booking__form .row .form-group,
@@ -852,7 +872,6 @@ p {
   color: var(--white-color);
 }
 
-
 .location__with__contact__section {
   width: 100%;
   margin: 1rem 0;
@@ -873,7 +892,6 @@ p {
   background: rgba(77, 160, 164, 0.2) !important;
 }
 
-
 .location__contact__details svg {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -885,30 +903,27 @@ p {
 
 /* Booking Page css  Ends */
 
+/* Privacy Policies Page */
+.privacy__section {
+  width: 100%;
+  margin: 2rem 0;
+  overflow: hidden;
+}
 
- /* Privacy Policies Page */
- .privacy__section{
-   width: 100%;
-   margin: 2rem 0;
-   overflow: hidden;
- }
+.privacy__content,
+.privacy__division {
+  width: 100%;
+}
 
- .privacy__content,
- .privacy__division {
-   width: 100%;
- }
+.privacy__division ul {
+  list-style-type: disc;
+}
 
- .privacy__division ul{
-   list-style-type: disc;
- }
-
- /* Privacy Policies Page */
-
-
+/* Privacy Policies Page */
 
 /* Media Queries  */
 
-@media screen and (min-width:426px) {
+@media screen and (min-width: 426px) {
   .booking__container {
     top: 40%;
   }
@@ -917,11 +932,13 @@ p {
     width: 100%;
     height: 600px;
   }
+
+  .booking__form .theme__button {
+    width: auto;
+  }
 }
 
-
 @media screen and (min-width: 1023px) {
-
   /* naigation  */
   .mob__navigation {
     display: none !important;
@@ -941,6 +958,7 @@ p {
   .call__container,
   .navbar__nav {
     width: max-content;
+    margin-bottom: 0;
   }
 
   .navbar__menu {
@@ -978,7 +996,6 @@ p {
 
   .theme__button {
     font-size: 1.1rem;
-    padding: 1rem 3rem;
   }
 
   /* boarding css  */
@@ -1012,8 +1029,27 @@ p {
   }
 
   /* service css  */
-
   .service__container {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .service__container::before{
+    content: "";
+    background: url("../images/service/service.jpg") top left no-repeat;
+    background-size: cover;
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    top: -110px;
+    left: 0;
+    height: 100%;
+    opacity: .7;
+  }
+
+  .service__main__container {
     flex-direction: row;
     justify-content: flex-start;
     gap: 1rem;
@@ -1055,6 +1091,7 @@ p {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .affordable__content p {
@@ -1192,9 +1229,6 @@ p {
     flex-direction: row;
   }
 
-
-
-
   /* About page css media queries  */
 
   .about__container {
@@ -1224,7 +1258,7 @@ p {
     object-fit: cover;
   }
 
-  .about__image__gallery .slick-slide>img {
+  .about__image__gallery .slick-slide > img {
     padding: 0;
     opacity: 1;
     border-radius: 10px;
@@ -1251,7 +1285,6 @@ p {
   .price__container__about p {
     margin-bottom: 1.5rem;
   }
-
 
   .perfect__holiday__section {
     width: 100%;
@@ -1327,24 +1360,23 @@ p {
 
   /* Booking Page Ends */
 
-
   /*! mediaquery ends  */
 }
 
 /* Slick css  */
-.slick-slide>img {
+.slick-slide > img {
   padding: 32px;
   transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0.5;
 }
 
-.slick-center>img {
+.slick-center > img {
   padding: 0;
   transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
 }
 
-.slider__item>img {
+.slider__item > img {
   width: 100%;
   height: auto;
 }
