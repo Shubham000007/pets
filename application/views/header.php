@@ -15,6 +15,7 @@
 
     <!-- Custom Css  -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/desktop.css" />
 
     <title>Dogs And Mogs Holiday Centre, Onkaparinga Hills</title>
     <meta name="keywords" content="Boarding Kennels, Catteries, Boarding Pets" />

@@ -49,18 +49,18 @@
         <div class="service__main__container">
             <div class="service__card">
                 <div class="service__image">
-                    <img src="<?php echo base_url() ?>assets/images/service/location.svg" alt="Location" class="odd" />
+                    <img src="<?php echo base_url() ?>assets/images/service/location.svg" alt="Location" />
                     <h5>Convenient Location</h5>
                 </div>
                 <div class="service__content">
-                    Located in Onkaparinga Hills, South Australia, our facilities is
-                    easy to get to.
+                    <p>Located in Onkaparinga Hills, South Australia, our facilities is
+                        easy to get to.</p>
                 </div>
             </div>
 
             <div class="service__card">
                 <div class="service__image">
-                    <img src="<?php echo base_url() ?>assets/images/service/community.svg" alt="Commuinity" class="even" />
+                    <img src="<?php echo base_url() ?>assets/images/service/community.svg" alt="Commuinity" />
                     <h5>Family Owned and Operated</h5>
                 </div>
                 <div class="service__content">
@@ -73,7 +73,7 @@
 
             <div class="service__card">
                 <div class="service__image">
-                    <img src="<?php echo base_url() ?>assets/images/service/dogs.svg" alt="Dogs" class="odd" />
+                    <img src="<?php echo base_url() ?>assets/images/service/dogs.svg" alt="Dogs" />
                     <h5>Passionate About Your Pets</h5>
                 </div>
                 <div class="service__content">
@@ -85,7 +85,7 @@
 
             <div class="service__card">
                 <div class="service__image">
-                    <img src="<?php echo base_url() ?>assets/images/service/price.svg" alt="Dogs" class="even" />
+                    <img src="<?php echo base_url() ?>assets/images/service/price.svg" alt="Dogs" />
                     <h5>Affordable Boarding Kennels and Catteries</h5>
                 </div>
                 <div class="service__content">
@@ -191,7 +191,7 @@
 <section class="discover__section">
     <div class="disover__container">
         <div class="discover__content">
-            <i class="fa-solid fa-phone"></i>
+            <img src="<?php echo base_url(); ?>assets/images/discover/phone.svg" alt="">
             <p>To discover more about Dogs and</p>
             <p>Mogs' Services, call the friendly</p>
             <p>team on 08 8325 0666 or</p>
@@ -207,23 +207,32 @@
 
 <section class="price__section">
     <div class="price__container">
-        <h5>PRICE LIST</h5>
-        <p>
-            At Dogs and Mogs, we cater to all cats and dogs of any size. We offer
-            a range of daily rates that vary depending on the size of your Pet.
-        </p>
-        <p>*Our daily rates are:</p>
-        <p>Cats: $13.00</p>
-        <p>Small Dogs: $23.00</p>
-        <p>Medium Dogs: $24.00</p>
-        <p>Large Dogs: $26.00</p>
-        <p>Extra Large Dogs: $27.00</p>
-        <p>Minimum 2 days charge applicable.</p>
-        <p>Easter and Christmas periods 5 days minimum charge required.</p>
-        <p>
-            *Please note that prices are per day, prices may change without prior
-            notice and prices may vary during public holidays
-        </p>
+        <div class="price__content">
+            <h5>PRICE LIST</h5>
+            <p class="fw-bold">
+                At Dogs and Mogs, we cater to all cats and dogs of any size. We offer
+                a range of daily rates that vary depending on the size of your Pet.
+            </p>
+            <p class="p-blank"></p>
+            <p>*Our daily rates are:</p>
+            <p>Cats: $15.00</p>
+            <p>Small Dogs: $24.00</p>
+            <p>Medium Dogs: $26.00</p>
+            <p>Large Dogs: $26.00</p>
+            <p>Extra Large Dogs: $27.00</p>
+            <p class="p-blank"></p>
+            <p>*Insulin, eye or ear medication $3 extra per day.</p>
+            <p>*Discounts offered for long term (2 weeks+) stay or for the second pet sharing the same kennel.</p>
+            <p>*Minimum 2 days charge applicable on weekends.</p>
+            <p>*Minimum 3 days charge applicable on Long weekends.</p>
+            <p class="p-blank"></p>
+            <p>Boarding - Public Holiday / Long weekend*</p>
+            <p class="p-blank"></p>
+            <p>* Easter and Christmas/New year period minimum 5 days charge. </p>
+            <p>* Long weekend minimum 3 days charge.</p>
+            <p>* During peak period, should your Pet be checked out earlier than the booking end date full fee will still be applicable</p>
+            <p>* Easter and Christmas/New year period bookings $30 non refundable deposit is required at the time of the booking which will be adjusted in your final account.</p>
+        </div>
     </div>
 </section>
 

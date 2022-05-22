@@ -1,6 +1,6 @@
 <!-- headers  -->
 <header class="mob__navigation navigation">
-    <div class="navbar my__container">
+    <div class="navbar">
         <div class="brand_container">
             <a href="<?php echo base_url() ?>">
                 <img src="<?php echo base_url() ?>assets/images/logo/logo.png" alt="Brand Logo" />
@@ -26,7 +26,7 @@
 </header>
 
 <header class="main__navigation navigation">
-    <div class="navbar my__container">
+    <div class="navbar">
         <div class="brand_container">
             <a href="<?php echo base_url() ?>">
                 <img src="<?php echo base_url() ?>assets/images/logo/logo.png" alt="Brand Logo" />

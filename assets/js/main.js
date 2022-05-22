@@ -86,8 +86,8 @@ $(document).ready(function () {
         var sticky = $('.navigation'),
             scroll = $(window).scrollTop();
 
-        if (scroll >= 100) sticky.addClass('nav__fixed');
-        else sticky.removeClass('nav__fixed');
+        if (scroll >= 100) sticky.addClass('small__nav');
+        else sticky.removeClass('small__nav');
     });
 
 
