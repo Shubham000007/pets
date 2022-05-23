@@ -48,6 +48,7 @@
 <script src="<?php echo base_url() ?>assets/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url() ?>assets/popper/popper.min.js"></script>
 <script src="<?php echo base_url() ?>assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
 <script src="<?php echo base_url() ?>assets/fontawesome/js/all.min.js"></script>
 <script src="<?php echo base_url() ?>assets/slick/slick.min.js"></script>
 

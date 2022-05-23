@@ -1,5 +1,8 @@
 <!-- Banners  -->
 <section class="banner__section">
+    <div class="background__banner">
+        <img src="<?php echo base_url(); ?>assets/images/banner/banner.jpg" alt="" class="banner__container__image">
+    </div>
     <div class="banner__container my__container">
         <div class="banner__heading">
             <h3>Dogs and Mogs Holiday Centre,</h3>

@@ -343,7 +343,7 @@
 		position: relative;
 		margin: 0 auto;
 		width: 100%;
-        display: flex;
+		display: flex;
 	}
 
 	.blank__price {
@@ -363,9 +363,9 @@
 	}
 
 	.price__content__about h5 {
-        font-size: 30px;
+		font-size: 30px;
 		margin: 16px 0;
-        text-align: left;
+		text-align: left;
 	}
 
 	.price__content__about p {
@@ -427,6 +427,23 @@
 	}
 
 	/* Holiday  */
+
+	.banner__section {
+		height: 700px;
+	}
+
+	.background__banner img {
+		height: 700px;
+		object-position: top;
+	}
+
+	.banner__section::after {
+		height: 700px;
+	}
+
+	.banner__container {
+		height: 700px;
+	}
 
 	/*! MEdia query ends  */
 }

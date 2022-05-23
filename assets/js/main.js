@@ -90,7 +90,8 @@ $(document).ready(function () {
         else sticky.removeClass('small__nav');
     });
 
-
-
     //! document ready emds
 });
+
+var images = document.querySelectorAll('.banner__container__image');
+new simpleParallax(images);
