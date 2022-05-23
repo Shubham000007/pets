@@ -24,7 +24,7 @@
                 <h6>Contact</h6>
                 <p>08 8325 0666</p>
                 <p>dogsandmogs@hotmail.com</p>
-                <a href="http://instagram.com/dogsandmogssa?fbclid=IwAR0FtSziirovk5qYbn8eXa-8b-QE2m4tjsB0Jlzi8v7gHUCMjemN9sxRA6o">
+                <a href="https://www.instagram.com/dogsandmogssa/?fbclid=IwAR0FtSziirovk5qYbn8eXa-8b-QE2m4tjsB0Jlzi8v7gHUCMjemN9sxRA6o">
                     <i class="fa-brands fa-instagram"></i></a>
             </div>
 
