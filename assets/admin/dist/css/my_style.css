@@ -1,0 +1,94 @@
+.w-full {
+	width: 100%;
+}
+
+.preloader {
+	background: #fff;
+}
+
+.error {
+	color: red;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input:read-only {
+	background: #f4f9f9;
+}
+
+.dataTables_length {
+	display: inline-block;
+}
+
+.dataTables_filter {
+	float: right;
+}
+
+.dt-buttons.btn-group.flex-wrap {
+	display: block;
+	margin-bottom: 1.5rem;
+	text-align: right;
+}
+
+.table.table-bordered.dataTable {
+	white-space: nowrap;
+}
+
+.dataTables_empty {
+	background: #fff;
+}
+.table thead {
+	background: royalblue;
+}
+
+.table thead tr th {
+	color: #fff;
+}
+
+.btn-primary,
+.buttons-excel {
+	background: royalblue;
+}
+
+.addMoreInclusion,
+.deleteThisInclusion,
+.exclusion_more,
+.exclusion_less,
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.glass-box-shadow {
+	box-shadow: 0 3px 5px 0 rgba(31, 38, 135, 0.37);
+	margin-top: 4rem;
+}
+
+.danger {
+	background: red;
+	color: white;
+}
+
+.primary {
+	background: dodgerblue;
+	color: white;
+}
+
+.iti-box-shadow {
+	box-shadow: 0 3px 5px 0 rgba(31, 38, 135, 0.37);
+}
+
+[class*="sidebar-dark"] .brand-link {
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bolder;
+}

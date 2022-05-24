@@ -1,7 +1,11 @@
 <!-- Banners  -->
 <section class="banner__section">
     <div class="background__banner">
-        <img src="<?php echo base_url(); ?>assets/images/banner/banner.jpg" alt="" class="banner__container__image">
+        <?php if ((!empty($banner))) { ?>
+            <img src="<?php echo base_url(); ?>assets/banners/<?php echo $banner['banner_image']; ?>" alt="" class="banner__container__image">
+        <?php } else { ?>
+            <img src="<?php echo base_url(); ?>assets/images/banner/banner.jpg" alt="" class="banner__container__image">
+        <?php } ?>
     </div>
     <div class="banner__container my__container">
         <div class="banner__heading">

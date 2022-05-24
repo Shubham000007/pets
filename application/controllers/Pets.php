@@ -13,6 +13,7 @@ class Pets extends CI_Controller
     {
         parent::__construct();
         $this->clear_cache();
+        $this->load->model('Pets_Model');
     }
 
 
@@ -20,9 +21,10 @@ class Pets extends CI_Controller
 
     function index()
     {
+        $data['banner'] = $this->Pets_Model->get_active_banner();
         $this->load->view('header');
         $this->load->view('navigation');
-        $this->load->view('index');
+        $this->load->view('index', $data);
         $this->load->view('footer');
     }
 
