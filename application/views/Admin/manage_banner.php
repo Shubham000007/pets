@@ -35,7 +35,7 @@
             <div class="row mt-3">
                 <div class="card w-full">
                     <div class="card-body">
-                        <table class="table table-bordered table-striped w-100" id="banner_listing">
+                        <table class="table table-bordered table-striped w-100 banner_listing" id="banner_listing">
                             <thead>
                                 <tr>
                                     <th>Sl.</th>
@@ -84,5 +84,4 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-button">Close</button>
             </div>
         </div>
-</div>
 </div>

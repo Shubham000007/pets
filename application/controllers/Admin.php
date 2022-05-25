@@ -301,5 +301,154 @@ class Admin extends MY_Controller
 
     //* Activate Banner Ends
 
+
+    //* upload Gallery Image
+
+    function add_gallery_form_data()
+    {
+        if (!$this->input->is_ajax_request()) {
+            exit('No direct script access allowed');
+        }
+
+        if (!is_dir(DocumentRoot . "assets/gallery")) {
+            mkdir(DocumentRoot . "assets/gallery", 0777, TRUE);
+        }
+
+        if ($_FILES['choose_gallery_image']['size'] != 0) {
+            $upload_dir = DocumentRoot . "assets/gallery";
+            $config['upload_path'] = $upload_dir;
+            $config['allowed_types'] = '*';
+            $config['file_name'] =  time() . mt_rand(100, 100000000000) . '_gallery_image';
+            $config['overwrite'] = false;
+            $config['remove_spaces'] = true;
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if ($this->upload->do_upload('choose_gallery_image')) {
+                $gallery = $this->upload->data();
+                $gallery = $gallery['file_name'];
+            } else {
+                // echo $this->upload->display_errors();
+                echo "failed";
+                exit();
+            }
+        } else {
+            echo "failed";
+            exit();
+        }
+
+        $insertGalleryImage = array(
+            'image	' => $gallery,
+            'title	' => $this->input->post('image_title'),
+            'upload_by' => trim($this->session->userdata('name'))
+        );
+        $insert = $this->db->insert('gallery_master', $insertGalleryImage);
+        if ($insert) {
+            echo "success";
+        } else {
+            echo "failed";
+        }
+    }
+
+    //* upload Gallery Image Ends
+
+    //* Show All Gallery Images
+
+    function show_all_gallery_images()
+    {
+        if (!$this->input->is_ajax_request()) {
+            exit('No direct script access allowed');
+        }
+        $requestData    = $_REQUEST;
+        $columns = array(
+            0 => 'id',
+            1 => 'action',
+            2 => 'image',
+            3 => 'title',
+            4 => 'upload_by'
+        );
+
+        $sql = "SELECT *  FROM `" . $this->db->dbprefix('gallery_master') . "` WHERE 1=1";
+
+        // if (!empty($requestData['search']['value'])) {
+        //     $sql .= " AND (upload_by LIKE '" . $requestData['search']['value'] . "%')";
+        // }
+
+
+        $totalFiltered = $this->db->query($sql)->num_rows();
+        $totalData     = $totalFiltered;
+        $sql .= " ORDER BY " . $columns[$requestData['order'][0]['column']] . "   " . $requestData['order'][0]['dir'] . "  LIMIT " . $requestData['start'] . " ," . $requestData['length'] . "   ";
+        $query['data'] = $this->db->query($sql)->result_array();
+        $data          = array();
+        $counter       = 0;
+        foreach ($query['data'] as $val) {
+            $nestedData = array();
+            $counter++;
+            $id = $val['id'];
+
+            $action = '&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="deleteGalleryImage(' . "'" .  $val['id'] . "'" . ',' . "'" .  $val['image'] . "'" . ')"  data-toggle="tooltip" data-placement="bottom" title="Delete Image"><i class="fas fa-trash-alt" aria-hidden="true" style="color:darkorange;"></i></span></a>&nbsp;';
+
+            if ((!empty($val['image']))) {
+                $imagePath = base_url() . "assets/gallery/" . $val['image'];
+                $path = '<a href="' . $imagePath . '" target="_blank"><img src="' . $imagePath . '" width="60" height="60" title="Click to View Image" /></a>';
+            } else {
+                $path = "-";
+            }
+
+
+            if (!empty($id)) {
+                $nestedData = array(
+                    'id' => $counter,
+                    'action' => $action,
+                    'image' => $path,
+                    'title' => $val['title'],
+                    'upload_by' => $val['upload_by'],
+                );
+            }
+            $data[] = $nestedData;
+        }
+
+
+        $json_data = array(
+            "draw" => intval($requestData['draw']),
+            "recordsTotal" => intval($totalData), // total number of records
+            "recordsFiltered" => intval($totalFiltered),
+            "records" => $data // total data array
+        );
+
+        echo json_encode($json_data);
+    }
+
+    //* Show All Gallery Images Ends
+
+
+    //* Delete Gallery Images
+
+    function delete_gallery_image()
+    {
+        if (!$this->input->is_ajax_request()) {
+            exit('No direct script access allowed');
+        }
+
+        $id = $_REQUEST['id'];
+        $imageName = $_REQUEST['imageName'];
+
+
+        $unlink = DocumentRoot . "assets/gallery/" . $imageName;
+        if (unlink($unlink)) {
+            $this->db->where('id', $id);
+            $delete = $this->db->delete('gallery_master');
+            if ($delete) {
+                echo "success";
+            } else {
+                echo "failed";
+            }
+        } else {
+            echo "failed";
+        }
+    }
+
+    //* Delete Gallery Images Ends
+
+
     //! Class Ends
 }
