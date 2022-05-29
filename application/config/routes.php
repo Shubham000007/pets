@@ -58,6 +58,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['about-us'] = 'Pets/about';
 $route['booking-enquiry'] = 'Pets/booking_eqnuiry';
 $route['privacy-policies'] = 'Pets/privacy_policies';
+$route['gallery'] = 'Pets/gallery';
 
 //* Admin Panel
 $route['admin-panel'] = "Admin/login";

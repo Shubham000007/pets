@@ -49,6 +49,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>Admin/booking_enquiries" class="nav-link">
+                        <i class="fas fa-calendar nav-icon"></i>
+                        <p>Booking Enquiries</p>
+                    </a>
+                </li>
+
 
                 <!-- <li class="nav-item menu-open">
                     <a href="#" class="nav-link active">

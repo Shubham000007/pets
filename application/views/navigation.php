@@ -15,6 +15,7 @@
             <div class="navbar__menu">
                 <a href="<?php echo base_url() ?>" class="navbar__link">Home</a>
                 <a href="<?php echo base_url() ?>about-us" class="navbar__link">About Us</a>
+                <a href="<?php echo base_url() ?>gallery" class="navbar__link">Gallery</a>
                 <a href="<?php echo base_url() ?>booking-enquiry" class="navbar__link">Booking Enquiry</a>
             </div>
         </nav>
@@ -37,6 +38,7 @@
             <div class="navbar__menu">
                 <a href="<?php echo base_url() ?>" class="navbar__link">Home</a>
                 <a href="<?php echo base_url() ?>about-us" class="navbar__link">About Us</a>
+                <a href="<?php echo base_url() ?>gallery" class="navbar__link">Gallery</a>
                 <a href="<?php echo base_url() ?>booking-enquiry" class="navbar__link">Booking Enquiry</a>
             </div>
         </nav>

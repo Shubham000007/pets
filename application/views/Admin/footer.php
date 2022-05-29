@@ -1,7 +1,6 @@
 <!-- Main Footer -->
 <footer class="main-footer">
-  <strong>Copyright &copy; <?php echo date("Y"); ?> <a href="javascript:void(0)">Dogs & Mogs</a>.</strong>
-  All rights reserved.
+  <strong>Design And Powered By <a href="https://brandremaster.com/" target="_blank">Brand Remaster</a>.</strong>
 </footer>
 </div>
 <!-- ./wrapper -->

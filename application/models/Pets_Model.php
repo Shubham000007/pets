@@ -15,5 +15,17 @@ class Pets_Model extends CI_Model
     //* Get Banners Ends
 
 
+    //* Gallery
+
+    function get_gallery()
+    {
+        $this->db->select('image,title');
+        $this->db->from('gallery_master');
+        return $this->db->get()->result_array();
+    }
+
+    //* Gallery Ends
+
+
     //! class Ends
 }

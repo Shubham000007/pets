@@ -1,7 +1,7 @@
 <!-- Location -->
 <section class="location__section">
     <div class="location__container my__container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d112084.57670255215!2d77.17150078434372!3d28.610484203516194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d28.6315508!2d77.1830238!4m5!1s0x390ce557b5293961%3A0xd64f3af06f981c9c!2spets%20shop!3m2!1d28.5929914!2d77.3051591!5e0!3m2!1sen!2sin!4v1651407590571!5m2!1sen!2sin" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.2575698492788!2d138.55261111577616!3d-35.125245392786844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab127fc8a4e261d%3A0x2d97cb5c0ce7fc20!2s54%20Kellys%20Rd%2C%20Onkaparinga%20Hills%20SA%205163%2C%20Australia!5e0!3m2!1sen!2sin!4v1653746455118!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
 <!-- Location Ends -->
@@ -38,7 +38,7 @@
     </div>
 
     <div class="powered__by__container">
-        <p>Powered By <a href="https://telstrawebsiteservices.com.au/" target="_blank">Telstra Business Website Services</a></p>
+        <p>Powered By <a href="https://brandremaster.com/" target="_blank" rel="dofollow">Brand Remaster</a></p>
     </div>
 </footer>
 
@@ -49,6 +49,7 @@
 <script src="<?php echo base_url() ?>assets/popper/popper.min.js"></script>
 <script src="<?php echo base_url() ?>assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/dist/js/sweetalert.min.js"></script>
 <script src="<?php echo base_url() ?>assets/fontawesome/js/all.min.js"></script>
 <script src="<?php echo base_url() ?>assets/slick/slick.min.js"></script>
 

@@ -40,29 +40,35 @@
     <div class="booking__form__container my__container">
         <div class="booking__form">
             <h4>BOOKING REQUEST</h4>
+            <?php
+            $attr = array('id' => 'booking_enq_form');
+            echo form_open_multipart('Pets/booking_enq_form_data', $attr);
+            ?>
             <div class="row">
                 <div class="col-sm-12">
-                    <p>Returning or New to Dogs &n Mogs?*</p>
+                    <p>Returning or New to Dogs &n Mogs?<span class="text-danger important">*</span></p>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="new_returning" id="new_returning">
-                        <label class="form-check-label" for="new_returning">
+                        <input class="form-check-input new_returning" type="radio" name="new_returning" value="New - First Time">
+                        <label class="form-check-label">
                             New - First Time
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="new_returning" id="new_returning">
-                        <label class="form-check-label" for="new_returning">
+                        <input class="form-check-input new_returning" type="radio" name="new_returning" value="Returning">
+                        <label class="form-check-label">
                             Returning
                         </label>
                     </div>
+                    <div class="text-danger" id="new_returning_error"></div>
                 </div>
             </div>
             <div class="row">
                 <h5>YOUR INFORMATION</h5>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="">First Name</label>
+                        <label for="">First Name <span class="text-danger important">*</span></label>
                         <input type="text" name="name" id="name" class="form-control" />
+                        <div class="text-danger" id="name_error"></div>
                     </div>
                 </div>
 
@@ -352,14 +358,16 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <label for="">Best contact number*</label>
-                        <input type="text" name="phone" id="phone" class="form-control" />
+                        <label for="">Best contact number<span class="text-danger important">*</span></label>
+                        <input type="number" name="phone" id="phone" class="form-control" />
+                        <div class="text-danger" id="phone_error"></div>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <label for="">Email*</label>
+                        <label for="">Email<span class="text-danger important">*</span></label>
                         <input type="email" name="email" id="email" class="form-control" />
+                        <div class="text-danger" id="email_error"></div>
                     </div>
                 </div>
 
@@ -369,78 +377,83 @@
             <div class="row">
                 <h5>BOOKING DETAILS</h5>
                 <div class="col-sm-12">
-                    <label for="">Drop off date*</label>
-                    <input type="date" name="drop_of_dselectate" id="drop_of_date" class="form-control">
+                    <label for="">Drop off date<span class="text-danger important">*</span></label>
+                    <input type="date" name="drop_of_date" id="drop_of_date" class="form-control" min="<?php echo date("Y-m-d"); ?>">
+                    <div class="text-danger" id="drop_of_date_error"></div>
                     <p>PLEASE NOTE we are CLOSED during certain dates during peak times.</p>
                 </div>
 
                 <div class="col-sm-12">
-                    <h6 for="">Drop off ETA*</h6>
+                    <h6 for="">Drop off ETA<span class="text-danger important">*</span></h6>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="drop_of_eta" id="drop_of_eta">
-                        <label class="form-check-label" for="drop_of_eta">
+                        <input class="form-check-input drop_of_eta" type="radio" name="drop_of_eta" value="Mon - Fri 8-10am">
+                        <label class="form-check-label">
                             Mon - Fri 8-10am
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="drop_of_eta" id="drop_of_eta">
-                        <label class="form-check-label" for="drop_of_eta">
+                        <input class="form-check-input drop_of_eta" type="radio" name="drop_of_eta" value="Mon - Fri 4-6pm">
+                        <label class="form-check-label">
                             Mon - Fri 4-6pm
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="drop_of_eta" id="drop_of_eta">
-                        <label class="form-check-label" for="drop_of_eta">
+                        <input class="form-check-input drop_of_eta" type="radio" name="drop_of_eta" value="Saturdays 8-9am ONLY">
+                        <label class="form-check-label">
                             Saturdays 8-9am ONLY
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="drop_of_eta" id="drop_of_eta">
-                        <label class="form-check-label" for="drop_of_eta">
+                        <input class="form-check-input drop_of_eta" type="radio" name="drop_of_eta" value="Sunday 4-6pm ONLY">
+                        <label class="form-check-label">
                             Sunday 4-6pm ONLY
                         </label>
                     </div>
 
+                    <div class="text-danger" id="drop_of_eta_error"></div>
+
                     <p>Please refer to our opening hours when selecting. Note that opening hours may change during peak times. No entry will be allowed outside these hours for the safety and comfort of our guests.</p>
 
                     <div class="col-sm-12">
-                        <label for="">Pick up date*</label>
-                        <input type="date" name="pick_up_date" id="pick_up_date" class="form-control">
+                        <label for="">Pick up date<span class="text-danger important">*</span></label>
+                        <input type="date" name="pick_up_date" id="pick_up_date" class="form-control" min="<?php echo date("Y-m-d"); ?>">
+                        <div class="text-danger" id="pick_up_date_error"></div>
                         <p>PLEASE NOTE we are CLOSED during certain dates during peak times.</p>
                     </div>
 
                     <div class="col-sm-12">
-                        <h6 for="">Collection ETA*</h6>
+                        <h6 for="">Collection ETA<span class="text-danger important">*</span></h6>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="collection_eta" id="collection_eta">
-                            <label class="form-check-label" for="collection_eta">
+                            <input class="form-check-input collection_eta" type="radio" name="collection_eta" value="Mon to Fri 8-10am">
+                            <label class="form-check-label">
                                 Mon to Fri 8-10am
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="collection_eta" id="collection_eta">
-                            <label class="form-check-label" for="collection_eta">
+                            <input class="form-check-input collection_eta" type="radio" name="collection_eta" value="Mon to Fri 4-6pm">
+                            <label class="form-check-label">
                                 Mon to Fri 4-6pm
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="collection_eta" id="collection_eta">
-                            <label class="form-check-label" for="collection_eta">
+                            <input class="form-check-input collection_eta" type="radio" name="collection_eta" value="SATURDAYS CLOSED">
+                            <label class="form-check-label">
                                 SATURDAYS CLOSED
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="collection_eta" id="collection_eta">
-                            <label class="form-check-label" for="collection_eta">
+                            <input class="form-check-input collection_eta" type="radio" name="collection_eta" value="Sunday 4-6pm ONLY">
+                            <label class="form-check-label">
                                 Sunday 4-6pm ONLY
                             </label>
                         </div>
+                        <div class="text-danger" id="collection_eta_error"></div>
 
                         <p>Please note our opening hours may change during peak times.</p>
 
@@ -469,15 +482,15 @@
                 <div class="col-sm-12">
                     <label for="">Is the animal desexed?</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="is_desexed" id="is_desexed">
-                        <label class="form-check-label" for="is_desexed">
+                        <input class="form-check-input" type="radio" name="is_desexed" value="Yes">
+                        <label class="form-check-label">
                             Yes
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="is_desexed" id="is_desexed">
-                        <label class="form-check-label" for="is_desexed">
+                        <input class="form-check-input" type="radio" name="is_desexed" value="No">
+                        <label class="form-check-label">
                             No
                         </label>
                     </div>
@@ -486,15 +499,15 @@
                 <div class="col-sm-12">
                     <label for="">Is the animals vaccines current and meet our vaccine requirements?</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="vaccine_info" id="vaccine_info">
-                        <label class="form-check-label" for="vaccine_info">
+                        <input class="form-check-input" type="radio" name="vaccine_info" value="Yes">
+                        <label class="form-check-label">
                             Yes
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="vaccine_info" id="vaccine_info">
-                        <label class="form-check-label" for="vaccine_info">
+                        <input class="form-check-input" type="radio" name="vaccine_info" value="No">
+                        <label class="form-check-label">
                             No
                         </label>
                     </div>
@@ -516,15 +529,15 @@
                 <div class="col-sm-12">
                     <label for="">Gender</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="animal_gender" id="animal_gender">
-                        <label class="form-check-label" for="animal_gender">
+                        <input class="form-check-input" type="radio" name="animal_gender" id="animal_gender" value="Male">
+                        <label class="form-check-label">
                             Male
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="animal_gender" id="animal_gender">
-                        <label class="form-check-label" for="animal_gender">
+                        <input class="form-check-input" type="radio" name="animal_gender" id="animal_gender" value="Female">
+                        <label class="form-check-label">
                             Female
                         </label>
                     </div>
@@ -558,16 +571,16 @@
                 <div class="col-sm-12">
                     <label for="">Sharing accomodation and play time?</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="accoumodation" id="accoumodation">
-                        <label class="form-check-label" for="accoumodation">
-                            Male
+                        <input class="form-check-input" type="radio" name="accoumodation" id="accoumodation" value="Yes">
+                        <label class="form-check-label">
+                            Yes
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="accoumodation" id="accoumodation">
-                        <label class="form-check-label" for="accoumodation">
-                            Female
+                        <input class="form-check-input" type="radio" name="accoumodation" id="accoumodation" value="No">
+                        <label class="form-check-label">
+                            No
                         </label>
                     </div>
                 </div>
@@ -578,9 +591,11 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <button class="theme__button">Submit</button>
+                    <button type="submit" class="theme__button booking_enq_button">Submit</button>
                 </div>
             </div>
+
+            <?php echo form_close(); ?>
         </div>
     </div>
 </section>
@@ -592,7 +607,7 @@
 <section class="location__with__contact__section">
     <div class="location__with__contact__container my__container">
         <div class="map__container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d112084.57670255215!2d77.17150078434372!3d28.610484203516194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d28.6315508!2d77.1830238!4m5!1s0x390ce557b5293961%3A0xd64f3af06f981c9c!2spets%20shop!3m2!1d28.5929914!2d77.3051591!5e0!3m2!1sen!2sin!4v1651407590571!5m2!1sen!2sin" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dogs and Mogs Location"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.2575698492788!2d138.55261111577616!3d-35.125245392786844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab127fc8a4e261d%3A0x2d97cb5c0ce7fc20!2s54%20Kellys%20Rd%2C%20Onkaparinga%20Hills%20SA%205163%2C%20Australia!5e0!3m2!1sen!2sin!4v1653746455118!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <div class="location__contact__details">

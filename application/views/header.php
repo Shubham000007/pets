@@ -27,6 +27,12 @@
     <meta property="og:description" content="Dogs and Mogs is a conveniently located Boarding Kennel and Cattery in Onkaparinga Hills, South Australia." />
     <meta property="og:title" content="Dogs And Mogs Holiday Centre, Onkaparinga Hills" />
     <meta property="og:image" content="https://lirp.cdn-website.com/8eb00bbb/dms3rep/multi/opt/dogs-mogs-fb-1920w.jpg" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/dist/css/sweetalert.css">
+    <script type="text/javascript">
+        var base_url = '<?php echo base_url(); ?>';
+        var csrf_test_name = '<?php echo $this->security->get_csrf_token_name(); ?>';
+        var csrf_hash = '<?php echo $this->security->get_csrf_hash(); ?>';
+    </script>
 </head>
 
 <body>

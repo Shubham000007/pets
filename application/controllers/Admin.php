@@ -450,5 +450,134 @@ class Admin extends MY_Controller
     //* Delete Gallery Images Ends
 
 
+    //* booking Enquiries
+
+    function booking_enquiries()
+    {
+        if (!$this->session->userdata('email')) {
+            redirect("admin/login");
+        }
+        $this->adminTheme('Admin/booking_enquiries');
+    }
+
+    //* booking Enquiries Ends
+
+
+    //* Shpow All Booking List 
+
+    function show_all_booking()
+    {
+        if (!$this->input->is_ajax_request()) {
+            exit('No direct script access allowed');
+        }
+        $requestData    = $_REQUEST;
+        $columns = array(
+            0 => 'id',
+            1 => 'date_of_booking',
+            2 => 'returning_new',
+            3 => 'first_name',
+            4 => 'last_name',
+            5 => 'street_address',
+            6 => 'address_line_2',
+            7 => 'city',
+            8 => 'state',
+            9 => 'contact_number',
+            10 => 'email',
+            11 => 'drop_off_date',
+            12 => 'drop_off_eta',
+            13 => 'pick_up_date',
+            14 => 'collection_io_eta',
+            15 => 'animal_booking_for',
+            16 => 'animal_name',
+            17 => 'is_animal_desexed',
+            18 => 'animal_vaccine_requirement',
+            19 => 'animal_age',
+            20 => 'animal_dob',
+            21 => 'animal_gender',
+            22 => 'animal_breed',
+            23 => 'current_vet_clinic',
+            24 => 'medication_required',
+            25 => 'behaviour_issue',
+            26 => 'accomodation',
+        );
+
+        $sql = "SELECT *  FROM `" . $this->db->dbprefix('booking_enquiry_master') . "` WHERE 1=1";
+
+        if (!empty($requestData['search']['value'])) {
+            $sql .= " AND (returning_new LIKE '" . $requestData['search']['value'] . "%'";
+            $sql .= "  OR first_name LIKE '" . $requestData['search']['value'] . "%' ";
+            $sql .= "  OR street_address LIKE '" . $requestData['search']['value'] . "%' ";
+            $sql .= "  OR contact_number LIKE '" . $requestData['search']['value'] . "%' ";
+            $sql .= "  OR city LIKE '" . $requestData['search']['value'] . "%' ";
+            $sql .= "  OR email LIKE '" . $requestData['search']['value'] . "%' ";
+            $sql .= "  OR state LIKE '" . $requestData['search']['value'] . "%'  )";
+        }
+
+
+        if (!empty($requestData['columns'][1]['search']['value'])) {
+            $date_of_booking = $requestData['columns'][1]['search']['value'];
+            $sql .= " AND date_of_booking='" . $date_of_booking . "'";
+        }
+
+        $totalFiltered = $this->db->query($sql)->num_rows();
+        $totalData     = $totalFiltered;
+        $sql .= " ORDER BY " . $columns[$requestData['order'][0]['column']] . "   " . $requestData['order'][0]['dir'] . "  LIMIT " . $requestData['start'] . " ," . $requestData['length'] . "   ";
+        $query['data'] = $this->db->query($sql)->result_array();
+        $data          = array();
+        $counter       = 0;
+        foreach ($query['data'] as $val) {
+            $nestedData = array();
+            $counter++;
+            $id = $val['id'];
+
+
+
+            if (!empty($id)) {
+                $nestedData = array(
+                    'id' => $counter,
+                    'date_of_booking' => date("d-m-Y", strtotime($val['date_of_booking'])),
+                    'returning_new' => $val['returning_new'],
+                    'first_name' => $val['first_name'],
+                    'last_name' => $val['last_name'],
+                    'street_address' => $val['street_address'],
+                    'address_line_2' => $val['address_line_2'],
+                    'city' => $val['city'],
+                    'state' => $val['state'],
+                    'contact_number' => $val['contact_number'],
+                    'email' => $val['email'],
+                    'drop_off_date' => date("d-m-Y", strtotime($val['drop_off_date'])),
+                    'drop_off_eta' => $val['drop_off_eta'],
+                    'pick_up_date' => date("d-m-Y", strtotime($val['pick_up_date'])),
+                    'collection_io_eta' => $val['collection_io_eta'],
+                    'animal_booking_for' => $val['animal_booking_for'],
+                    'animal_name' => $val['animal_name'],
+                    'is_animal_desexed' => $val['is_animal_desexed'],
+                    'animal_vaccine_requirement' => $val['animal_vaccine_requirement'],
+                    'animal_age' => $val['animal_age'],
+                    'animal_dob' => date("d-m-Y", strtotime($val['animal_dob'])),
+                    'animal_gender' => $val['animal_gender'],
+                    'animal_breed' => $val['animal_breed'],
+                    'current_vet_clinic' => $val['current_vet_clinic'],
+                    'medication_required' => $val['medication_required'],
+                    'behaviour_issue' => $val['behaviour_issue'],
+                    'accomodation' => $val['accomodation']
+                );
+            }
+            $data[] = $nestedData;
+        }
+
+
+        $json_data = array(
+            "draw" => intval($requestData['draw']),
+            "recordsTotal" => intval($totalData), // total number of records
+            "recordsFiltered" => intval($totalFiltered),
+            "records" => $data // total data array
+        );
+
+        echo json_encode($json_data);
+    }
+
+    //* Shpow All Booking List Ends
+
     //! Class Ends
 }
